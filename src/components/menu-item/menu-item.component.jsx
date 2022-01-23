@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './menu-item.styles.scss';
 
 const MenuItem = ({ title, imageUrl, size, linkUrl}) => {
-  console.log(linkUrl);
   let navigate = useNavigate();
   let location = useLocation();
   return(

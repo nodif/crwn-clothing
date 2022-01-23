@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes  } from "react-router-dom";
 import CollectionPage from "../collection/collection.component";
 import CollectionOverview from '../../components/collection-overview/collection-overview.component';
 

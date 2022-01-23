@@ -49,8 +49,8 @@ class App extends React.Component {
           <Route path='/shop/*' element={<ShopPage/>} />
           <Route path='/checkout' element={<CheckoutPage/>}/>
           <Route path='/signin' element={this.props.currentUser ? 
-            <Navigate to='/' replace={true}> {console.log('TRUE') + this.props.currentUser} </Navigate>: 
-            <SignInAndSignUpPage> {console.log('FALSE' + this.props.currentUser)} </SignInAndSignUpPage>          
+            <Navigate to='/' replace={true} />  : 
+            <SignInAndSignUpPage/>            
           } />
         </Routes>
       </div>

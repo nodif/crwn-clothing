@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { createSelector } from "reselect";
+import ShopActionTypes from "./shop.types";
 
 const selectShop = state => state.shop;
 
@@ -9,7 +11,7 @@ export const selectCollections = createSelector(
 
 export const selectCollectionsForPreview = createSelector(
     [selectCollections],
-    collections => Object.keys(collections).map(key => collections[key])
+    collections => collections ? Object.keys(collections).map(key => collections[key]) : []
   );
 
 export const selectCollection = collectionUrlParam => 
@@ -17,3 +19,13 @@ export const selectCollection = collectionUrlParam =>
         [selectCollections],
         collections => collections[collectionUrlParam]
     )
+
+export const selectIsCollectionsFetching = createSelector(
+    [selectShop],
+    shop => shop.isFetching
+)
+
+export const selectIsCollectionsLoaded = createSelector(
+    [selectShop],
+    shop => !!shop.collections
+)
